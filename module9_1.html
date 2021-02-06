@@ -5,12 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #videoPlayer {
+            height: 300px;
+            width: 500px;
+            margin-top: 10%; 
+            margin-left: 30%;
+        }
+    </style>
 </head>
-<body>
-    <video width="50%" height="30%" autoplay controls style="margin-top: 5%; margin-left: 25%;">
-        <source src="./Videos/Discover_ Charging on the Road.mp4" type="video/mp4">
-        <source src="./Videos/Discover_ Charging on the Road.ogg" type="video/ogg">
-        Your browser doesn't support this video.
-    </video>
+<body onload="autoplay()">
+    <div id='videoPlayer'>
+        <video width="100%" height="100%" id="myVideo" autoplay preload="auto">
+            <source src="./Videos/Discover_ Charging on the Road.mp4" type="video/mp4">
+            <source src="./Videos/Discover_ Charging on the Road.ogg" type="video/ogg">
+            Your browser doesn't support this video.
+        </video>
+        <div id='player'>
+            <button style="width: 49%;" id='replay' onclick="replay()">Replay</button>
+            <button style="width: 50%;" id='fullscreen' onclick="fullScreen()">Fullscreen</button>
+        </div>
+    </div>
+    <script>
+        const video = document.querySelector("#myVideo");
+        // video.autoplay = true;
+        // video.load();
+        function fullScreen() {
+            if (video.mozRequestFullScreen) {
+                video.mozRequestFullScreen();
+            } else if (video.webkitRequestFullScreen) {
+                video.webkitRequestFullScreen();
+            } 
+        }
+        function autoplay() {
+            video.autoplay = true;
+            video.load();
+        }
+        function replay() {
+            video.currentTime = 0;
+            // video.autoplay = true;
+        }
+    </script>
 </body>
 </html>
