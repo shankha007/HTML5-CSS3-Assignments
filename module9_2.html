@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #audioPlayer {
+            height: 200px;
+            width: 300px;
+        }
+        #background {
+            height: 180px;
+            width: 300px;
+            background-image: url('./Images/cover.jpg');
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <!-- <audio src="./Audios/Inspirational Audio.mp3" controls>
+        <p>Your browser doesn't support audio</p>
+    </audio> -->
+    <div id='audioPlayer'>
+        <div id='background'></div>
+        <div id='player'>
+            <button style="width: 33%;" id='togglePlay' onclick="togglePlayPause()">Play</button>
+            <button style="width: 32%;" id='volumeDown' onclick="volumeDown()">Volume -</button>
+            <button style="width: 32%;" id='volumeUp' onclick="volumeUp()">Volume +</button>
+        </div>
+    </div>
+    <script>
+        const audioPlayer = document.querySelector("#audioPlayer");
+        const audio = new Audio("./Audios/Inspirational Audio.mp3");
+        function togglePlayPause() {
+            var w = document.getElementById('togglePlay').innerHTML;
+            if(w=='Play') {
+                audio.play();
+                document.getElementById('togglePlay').innerHTML = 'Pause';
+            }
+            else {
+                audio.pause();
+                document.getElementById('togglePlay').innerHTML = 'Play';
+            }
+        }
+        function volumeDown() {
+            if(audio.volume!=0)
+                audio.volume = (audio.volume*10-1)/10;
+        }
+        function volumeUp() {
+            if(audio.volume!=1)
+                audio.volume = (audio.volume*10+1)/10;
+        }
+    </script>
+</body>
+</html>

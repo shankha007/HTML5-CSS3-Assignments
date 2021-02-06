@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+</head>
+<body>
+    <h1>Register Yourself</h1>
+    <form action="/action.php">
+        <fieldset>
+            <legend>Personal Details</legend>
+            <label for="fname">First Name</label><br>
+            <input type="text" name="fname" placeholder="First name only"><br>
+            <label for="lname">Last Name</label><br>
+            <input type="text" name="lname" placeholder="Last name only"><br>
+            <label for="dob">Date of Birth</label><br>
+            <input type="date" name="dob"><br>
+            <label for="email">Email</label><br>
+            <input type="email" name="email" placeholder="example@domain.com"><br>
+            <label for="url">URL</label><br>
+            <input type="url" name="url" placeholder="https://www.mysite.com"><br>
+            <label for="telephone">Telephone</label><br>
+            <input type="tel" name="telephone" placeholder="Eg. +447000 000000"><br>
+            <label for="skills">Skills</label><br>
+            <select>
+                <option value="0"></option>
+                <option value="1">Singing</option>
+                <option value="2">Drawing</option>
+                <option value="3">Dancing</option>
+                <option value="4">Playing</option>
+            </select><br>
+            <label for="level">Skill Level (1 low - 100 high)</label><br>
+            <input type="range" name="level" min="1" max="100"><br>
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UpKart</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        form {
+            width: 80%;
+            font-size: 18px;
+            font-weight: bold;
+            margin-left: 10%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Place Your Order</h1>
+    <form action="/action.php">
+        <fieldset>
+            <legend>Personal Details</legend>
+            <label for="fname">First Name</label><br>
+            <input type="text" name="fname" placeholder="First name only" required><br>
+            <label for="lname">Last Name</label><br>
+            <input type="text" name="lname" placeholder="Last name only" required><br>
+            <label for="email">Email</label><br>
+            <input type="email" name="email" placeholder="example@domain.com"><br>
+            <label for="telephone">Telephone</label><br>
+            <input type="tel" name="telephone" placeholder="Eg. +447000 000000" required><br>
+            <label for="shoesize">Shoe Size</label><br>
+            <input type="number" name="shoesize" min="2" max="14"><br>
+        </fieldset>
+        <br><br>
+        <fieldset>
+            <legend>Billing Address</legend>
+            <label for="address">Address</label><br>
+            <textarea name="address" cols="30" rows="4"></textarea><br>
+            <label for="postcode">Post Code</label><br>
+            <input type="number" maxlength="6" minlength="6"><br>
+            <label for="country">Country</label><br>
+            <input type="text" name="country" placeholder="India"><br>
+        </fieldset>
+        <br><br>
+        <fieldset>
+            <legend>Card details</legend>
+            <fieldset>
+                <legend>Card type</legend>
+                <label name="card"></label>
+                <input type="radio" name="card">VISA
+                <input type="radio" name="card">Mastercard
+                <input type="radio" name="card">AMEX
+            </fieldset>
+            <label for="cardname">Name</label><br>
+            <input type="text" name="cardname" placeholder="Name as is apprears on the card"><br>
+            <label for="cardno">Card Number</label><br>
+            <input type="number" name="cardno"><br>
+            <label for="securitycode">Security Code</label><br>
+            <input type="password" name="securitycode"><br>
+            <label for="expdate">Expiry Date</label><br>
+            <input type="month" name="expdate">
+        </fieldset><br><br>
+        <fieldset>
+            <input type="submit" value="Place Order">
+        </fieldset>
+    </form>
+</body>
+
+</html>

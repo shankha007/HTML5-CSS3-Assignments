@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 200px;
+            width: 200px;
+            text-align: center;
+        }
+        #red {
+            background-color: red;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: -1;
+        }
+        #green {
+            background-color: green;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            z-index: 0;
+        }
+        #blue {
+            background-color: blue;
+            position: absolute;
+            left: 200px;
+            top: 200px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="red">RED</div>
+    <div id="green">GREEN</div>
+    <div id="blue">BLUE</div>
+</body>
+</html>

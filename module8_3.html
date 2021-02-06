@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Enter the limit to calculate the odd numbers starting from 1:
+    <input type="number" id="limit"><br>
+    <button onclick="startCounter()">Start Printing</button> 
+    <button onclick="stopCounter()">Stop Printing</button>
+    <div id='printed'></div>
+    <script>
+        var worker;
+        var count = document.getElementById('limit').value;
+        function startCounter() {
+            worker = new Worker('oddCounter.js');
+            worker.onmessage = function(event) {
+                document.getElementById('printed').innerHTML = document.getElementById('printed').innerHTML + "<li>"+parseInt(event.data)+"</li>";
+            }
+        }
+
+        function stopCounter() {
+            worker.terminate();
+            worker = undefined;
+        }
+    </script>
+</body>
+</html>

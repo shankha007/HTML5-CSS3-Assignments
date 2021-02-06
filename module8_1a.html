@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to UpKart</title>
+    <style>
+        ul {
+            font-size: 20px;
+        }
+
+        li a {
+            text-decoration: none;
+            color: black;
+        }
+
+        #selected {
+            font-family: cursive;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body onload="storeItems()">
+    <h2>Welcome User</h2><br>
+    <ul id="itemsList">
+    </ul>
+    <p>Your last selected item: <span id="itemSelected"></span></p>
+    <div id="selected"></div><br>
+    <input type="submit" value="Sign Out" onclick="redirectTo()">
+    <script>
+        function storeItems() {
+            var item = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 6'];
+            localStorage.setItem("Items", item);
+            loadItems();
+        }
+        function loadItems() {
+            var items = localStorage.getItem("Items").split(",");
+            // console.log(items);
+            for (item in items) {
+                console.log(item);
+                document.getElementById("itemsList").innerHTML = document.getElementById("itemsList").innerHTML + `<li><a href="#" onclick="addItem('${items[item]}')">${items[item]}</a></li>`;
+            }
+        }
+        function addItem(arg) {
+            document.getElementById("itemSelected").innerHTML = arg;
+            document.getElementById("selected").innerHTML = document.getElementById('selected').innerHTML + arg + '<br>';
+        }
+        function redirectTo() {
+            window.location.href = "./module8_1.html";
+        }
+    </script>
+</body>
+
+</html>

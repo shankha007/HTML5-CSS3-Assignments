@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Number of visitor of this Webpage: <span id='count'></span></p>
+    <script>
+        function counter() {
+            if (!localStorage.getItem('noofPageLoads')) {
+                localStorage.setItem('noofPageLoads', 1);
+            }
+            else {
+                localStorage.setItem('noofPageLoads', parseInt(localStorage.getItem('noofPageLoads'))+1);
+            }
+            document.getElementById('count').innerHTML = localStorage.getItem('noofPageLoads');
+        }
+        window.addEventListener('load', counter);
+    </script>
+</body>
+</html>
