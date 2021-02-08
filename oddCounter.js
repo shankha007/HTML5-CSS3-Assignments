@@ -1,11 +1,6 @@
-function oddNumberPrinter(val) {
-    for(var i=parseInt(val);i>=1;i--) {
-        setTimeout(() => {
-            console.log('Hi'+i)
-        }, 1000);
-        if(i%2!=0)
-            postMessage(i);
+onmessage = function(e) {
+    for (let i = 1; i < e.data[0]; i+=2) {
+        postMessage(i);
     }
+    // console.log('running worker');
 }
-
-oddNumberPrinter(30);
